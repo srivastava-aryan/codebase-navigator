@@ -1,4 +1,4 @@
-import { ArrowRight, Code2, GitBranch, MessageCircle } from 'lucide-react';
+import { ArrowRight, FileCode2Icon, GitBranch, MessageCircle } from 'lucide-react';
 
 interface HeroProps {
   onGetStarted: () => void;
@@ -55,7 +55,7 @@ export default function Hero({ onGetStarted }: HeroProps) {
 
           <div className="p-6 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl hover:bg-gray-800 transition-all duration-300 hover:scale-105">
             <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center mb-4">
-              <Code2 className="w-6 h-6 text-gray-300" />
+              <FileCode2Icon className="w-6 h-6 text-gray-300" />
             </div>
             <h3 className="text-lg font-semibold mb-2 text-white">Analyze Code</h3>
             <p className="text-gray-400 text-sm">AI-powered analysis of code structure and dependencies</p>
