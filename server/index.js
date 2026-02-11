@@ -7,7 +7,9 @@ import askRouter from './routes/ask.js';
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors(
+    ['https://codebase-nav.onrender.com', 'http://localhost:5173']
+));
 app.use(express.json());
 app.use('/ingest', ingestRouter);    
 app.use('/ask', askRouter);
