@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import { Github, ArrowRight, Sparkles, Loader2 } from 'lucide-react';
+import { Github, ArrowRight, Sparkles, Loader2, ArrowLeft } from 'lucide-react';
 import { ingestRepository } from '../services/api';
 
 interface RepoInputProps {
   onSubmit: (url: string) => void;
+  onBack?: () => void;
 }
 
-export default function RepoInput({ onSubmit }: RepoInputProps) {
+export default function RepoInput({ onSubmit, onBack }: RepoInputProps) {
   const [url, setUrl] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -54,12 +55,19 @@ export default function RepoInput({ onSubmit }: RepoInputProps) {
       <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-gray-700/20 rounded-full blur-3xl animate-pulse-slow"></div>
       <div className="absolute bottom-1/3 left-1/3 w-96 h-96 bg-gray-600/10 rounded-full blur-3xl animate-pulse-slow-delay"></div>
 
+      {/* Back Button */}
+      {onBack && (
+        <button
+          onClick={onBack}
+          className="fixed top-8 left-8 z-20 flex items-center gap-2 px-4 py-2 bg-gray-800/50 hover:bg-gray-700 border border-gray-600 rounded-lg text-gray-300 hover:text-white transition-all duration-300 backdrop-blur-sm group"
+        >
+          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+          Back to Home
+        </button>
+      )}
+
       <div className="relative z-10 w-full max-w-3xl">
         <div className="text-center mb-12 animate-fade-in">
-          {/* <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-600 rounded-full text-gray-300 text-sm mb-6">
-            <Sparkles className="w-4 h-4" />
-            Step 1 of 2
-          </div> */}
           <h2 className="text-5xl font-bold mb-4 text-white">
             Enter Repository URL
           </h2>

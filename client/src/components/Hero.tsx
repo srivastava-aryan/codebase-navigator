@@ -18,7 +18,7 @@ export default function Hero({ onGetStarted }: HeroProps) {
           <div className="mb-8 animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-600 rounded-full text-gray-300 text-sm mb-8">
               <span className="relative inline-flex rounded-full h-2 w-2 bg-gray-500"></span>
-              New Feature: AI-Powered Code Analysis - Try it Now!
+              Instant Code Understanding with AI!
             </div>
           </div>
 

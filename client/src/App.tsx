@@ -30,7 +30,13 @@ function App() {
     }, 2000);
   };
 
-  const handleBack = () => {
+  const handleBackToHero = () => {
+    setState('hero');
+    setRepoUrl('');
+    setProcessingStep('cloning');
+  };
+
+  const handleBackToInput = () => {
     setState('input');
     setRepoUrl('');
     setProcessingStep('cloning');
@@ -39,11 +45,11 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
       {state === 'hero' && <Hero onGetStarted={handleGetStarted} />}
-      {state === 'input' && <RepoInput onSubmit={handleRepoSubmit} />}
+      {state === 'input' && <RepoInput onSubmit={handleRepoSubmit} onBack={handleBackToHero} />}
       {state === 'processing' && (
         <ProcessingAnimation step={processingStep} repoUrl={repoUrl} />
       )}
-      {state === 'chat' && <ChatInterface repoUrl={repoUrl} onBack={handleBack} />}
+      {state === 'chat' && <ChatInterface repoUrl={repoUrl} onBack={handleBackToInput} />}
     </div>
   );
 }
