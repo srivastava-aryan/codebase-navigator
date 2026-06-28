@@ -162,7 +162,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 Aryan Srivastava - [@srivastava-aryan](https://github.com/srivastava-aryan)
 
-Project Link: [https://github.com/srivastava-aryan/codebase-navigator](https://github.com/srivastava-aryan/codebase-navigator)
+Project Link: [↗️](https://codebase-nav.onrender.com)
 
 ---
 
